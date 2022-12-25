@@ -19,7 +19,7 @@ public  class Calculator implements ActionListener {
     char operator;
 
 
-    Caluclator() {
+    Calculator() {
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
@@ -116,7 +116,7 @@ public  class Calculator implements ActionListener {
 
     public static void main(String[] args) {
 
-        Caluculator calc = new Calculator();
+        Calculator calc = new Calculator();
 
 
     }
