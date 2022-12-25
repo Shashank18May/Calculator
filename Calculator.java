@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public  class Caluclator implements ActionListener {
+public  class Calculator implements ActionListener {
 
     JFrame frame;
     JTextField textField;
@@ -116,7 +116,7 @@ public  class Caluclator implements ActionListener {
 
     public static void main(String[] args) {
 
-        Caluclator calc = new Caluclator();
+        Caluculator calc = new Calculator();
 
 
     }
