@@ -11,6 +11,6 @@ If you want to run this code:-
 
 2. Compile `Calculator.java` with `javac Calculator.java`
 
-3. Then run `java Main` to launch the Calculator.
+3. Then run `java Calculator` to launch the Calculator.
 
 This program is compatible with any verion of java above JAVA 1.7.5
