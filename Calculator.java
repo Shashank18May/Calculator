@@ -121,10 +121,14 @@ public  class Calculator implements ActionListener {
 
     }
 
-
+boolean isSolved = false;
     @Override
     public void actionPerformed(ActionEvent e) {
         for (int i = 0; i < 10; i++) {
+            if (isSolved) {
+                textField.setText("");
+                isSolved = false;
+            }
             if (e.getSource() == numberB[i]) {
                 textField.setText(textField.getText().concat(String.valueOf(i)));
             }}
@@ -171,7 +175,7 @@ public  class Calculator implements ActionListener {
                         break;
                 }
                 textField.setText(String.valueOf(num3));
-                num1 = num3;
+                isSolved = true;
                 }
         if (e.getSource() == clr) {
             textField.setText("");
