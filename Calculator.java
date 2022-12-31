@@ -158,25 +158,30 @@ boolean isSolved = false;
                 textField.setText("");
 
                 }
-            if(e.getSource() == eqB){
-                num2= Double.parseDouble(textField.getText());
+                if(e.getSource() == eqB){
+            if(addB.getModel().isPressed()||subB.getModel().isPressed()||divB.getModel().isPressed()||mulB.getModel().isPressed()){
+            num2= Double.parseDouble(textField.getText());
+
                 switch (operator) {
-                    case '+': 
+                    case '+':
                         num3 = num1 + num2;
-                        break;
-                    case '-': 
+                    case '-':
                         num3 = num1 - num2;
-                        break;
-                   case '/': 
+                    case '/':
                         num3 = num1 / num2;
-                        break;
-                   case '*': 
+                    case '*':
                         num3 = num1 * num2;
-                        break;
-                }
-                textField.setText(String.valueOf(num3));
-                isSolved = true;
-                }
+
+
+            }
+            textField.setText(String.valueOf(num3));
+            }
+            else{
+                num1 = Double.parseDouble(textField.getText());
+                textField.setText(String.valueOf(num1));
+            }
+            isSolved = true;
+
         if (e.getSource() == clr) {
             textField.setText("");
 
