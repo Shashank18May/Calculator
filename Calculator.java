@@ -193,6 +193,6 @@ boolean isSolved = false;
                textField.setText(textField.getText()+string.charAt(i));
            }
         }
-            }
+            }}
         }
 
