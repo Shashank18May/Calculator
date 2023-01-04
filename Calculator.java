@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public  class Calculator implements ActionListener {
+public  class Caluclator implements ActionListener {
 
     JFrame frame;
     JTextField textField;
@@ -19,7 +19,8 @@ public  class Calculator implements ActionListener {
     char operator;
 
 
-    Calculator() {
+
+    Caluclator() {
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
@@ -32,7 +33,7 @@ public  class Calculator implements ActionListener {
         textField.setBounds(50, 25, 300, 50);
         textField.setFont(font);
         textField.setEditable(false);
-        textField.setBackground(new Color(255,102,204));
+        textField.setBackground(new Color(255, 102, 204));
         textField.setForeground(new Color(0, 0, 204));
 
         addB = new JButton("+");
@@ -41,7 +42,7 @@ public  class Calculator implements ActionListener {
         divB = new JButton("/");
         decB = new JButton(".");
         eqB = new JButton("=");
-        delB = new JButton("DELETE");
+        delB = new JButton("DEL..");
         clr = new JButton("CLEAR");
 
 
@@ -112,18 +113,29 @@ public  class Calculator implements ActionListener {
         frame.setBackground(Color.BLACK);
         frame.setVisible(true);
 
+
+
+
+
     }
 
     public static void main(String[] args) {
 
-        Calculator calc = new Calculator();
+        Caluclator calc = new Caluclator();
 
 
     }
 
-boolean isSolved = false;
+
+
+    boolean isSolved = false;
+
     @Override
     public void actionPerformed(ActionEvent e) {
+
+
+
+
         for (int i = 0; i < 10; i++) {
             if (isSolved) {
                 textField.setText("");
@@ -132,49 +144,48 @@ boolean isSolved = false;
             if (e.getSource() == numberB[i]) {
                 textField.setText(textField.getText().concat(String.valueOf(i)));
             }}
-            if (e.getSource() == decB) {
-                textField.setText(textField.getText().concat("."));
-            }
-            if (e.getSource() == addB) {
-                num1 = Double.parseDouble(textField.getText());
-                operator = '+';
-                textField.setText("");
-            }
-            if (e.getSource() == subB) {
-                num1 = Double.parseDouble(textField.getText());
-                operator = '-';
-                textField.setText("");
+        if (e.getSource() == decB) {
+            textField.setText(textField.getText().concat("."));
+        }
+        if (e.getSource() == addB) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '+';
+            textField.setText("");
+        }
+        if (e.getSource() == subB) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '-';
+            textField.setText("");
 
-                }
-            if (e.getSource() == mulB) {
-                num1 = Double.parseDouble(textField.getText());
-                operator = '*';
-                textField.setText("");
+        }
+        if (e.getSource() == mulB) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '*';
+            textField.setText("");
 
-                }
-            if (e.getSource() == divB) {
-                num1 = Double.parseDouble(textField.getText());
-                operator = '/';
-                textField.setText("");
+        }
+        if (e.getSource() == divB) {
+            num1 = Double.parseDouble(textField.getText());
+            operator = '/';
+            textField.setText("");
 
-                }
-                if(e.getSource() == eqB){
-            if(addB.getModel().isPressed()||subB.getModel().isPressed()||divB.getModel().isPressed()||mulB.getModel().isPressed()){
+        }
+        if(e.getSource() == eqB){
+          if(operator == '/'||operator == '+'||operator == '-'||operator == '*'){
+
             num2= Double.parseDouble(textField.getText());
 
                 switch (operator) {
-                    case '+':
-                        num3 = num1 + num2;
-                    case '-':
-                        num3 = num1 - num2;
-                    case '/':
-                        num3 = num1 / num2;
-                    case '*':
-                        num3 = num1 * num2;
+                    case '+' -> num3 = num1 + num2;
+                    case '-' -> num3 = num1 - num2;
+                    case '/' -> num3 = num1 / num2;
+                    case '*' -> num3 = num1 * num2;
 
 
             }
             textField.setText(String.valueOf(num3));
+            operator = ' ';
+
             }
             else{
                 num1 = Double.parseDouble(textField.getText());
@@ -182,17 +193,23 @@ boolean isSolved = false;
             }
             isSolved = true;
 
+
+
+       }
         if (e.getSource() == clr) {
             textField.setText("");
 
         }
         if (e.getSource() == delB) {
-           String string = textField.getText();
-           textField.setText("");
-           for(int i =0 ;i<string.length()-1;i++){
-               textField.setText(textField.getText()+string.charAt(i));
-           }
+            String string = textField.getText();
+            textField.setText("");
+            for(int i =0 ;i<string.length()-1;i++){
+                textField.setText(textField.getText()+string.charAt(i));
+            }
         }
-            }}
-        }
+    }}
+
+
+
+
 
