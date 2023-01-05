@@ -176,10 +176,14 @@ public  class Caluclator implements ActionListener {
             num2= Double.parseDouble(textField.getText());
 
                 switch (operator) {
-                    case '+' -> num3 = num1 + num2;
-                    case '-' -> num3 = num1 - num2;
-                    case '/' -> num3 = num1 / num2;
-                    case '*' -> num3 = num1 * num2;
+                    case '+' :
+                        num3 = num1 + num2;
+                    case '-' :
+                        num3 = num1 - num2;
+                    case '/' :
+                        num3 = num1 / num2;
+                    case '*' :
+                        num3 = num1 * num2;
 
 
             }
