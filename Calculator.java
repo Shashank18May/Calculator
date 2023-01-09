@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public  class Caluclator implements ActionListener {
+public  class Calculator implements ActionListener {
 
     JFrame frame;
     JTextField textField;
@@ -20,7 +20,7 @@ public  class Caluclator implements ActionListener {
 
 
 
-    Caluclator() {
+    Calculator() {
         frame = new JFrame("Calculator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(420, 550);
@@ -121,7 +121,7 @@ public  class Caluclator implements ActionListener {
 
     public static void main(String[] args) {
 
-        Caluclator calc = new Caluclator();
+        Calculator calc = new Calculator();
 
 
     }
@@ -176,21 +176,23 @@ public  class Caluclator implements ActionListener {
             num2= Double.parseDouble(textField.getText());
 
                 switch (operator) {
-                    case '+' :
+                    case '+':
                         num3 = num1 + num2;
-                    case '-' :
+                        break;
+                    case '-':
                         num3 = num1 - num2;
-                    case '/' :
+                        break;
+                    case '/':
                         num3 = num1 / num2;
-                    case '*' :
+                        break;
+                    case '*':
                         num3 = num1 * num2;
-
-
-            }
+                        break;
+                }
             textField.setText(String.valueOf(num3));
             operator = ' ';
 
-            }
+        }
             else{
                 num1 = Double.parseDouble(textField.getText());
                 textField.setText(String.valueOf(num1));
