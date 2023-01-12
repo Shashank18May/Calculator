@@ -137,7 +137,7 @@ public  class Calculator implements ActionListener {
 
 
         for (int i = 0; i < 10; i++) {
-            if (isSolved) {
+            if (isSolved&&((textField.getText()).equalsIgnoreCase("infinity")||textField.getText().equalsIgnoreCase("nan"))) {
                 textField.setText("");
                 isSolved = false;
             }
